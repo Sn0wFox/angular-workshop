@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Pokemon } from '../pokemon';
+import {PokemonService} from "../pokemon.service";
 
 @Component({
   selector: 'app-pkmn-list',
@@ -9,19 +10,12 @@ import { Pokemon } from '../pokemon';
 })
 export class PkmnListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pkmnService: PokemonService) { }
 
   ngOnInit() {
+    this.pokemons = this.pkmnService.getPkmnSync();
   }
 
-  pokemons: Pokemon[] = [
-    {
-      name: 'Bulbasaur',
-      id: 1
-    },
-    {
-      name: 'Ivysaur',
-      id: 2
-    }];
+  pokemons: Pokemon[] = [];
 
 }
