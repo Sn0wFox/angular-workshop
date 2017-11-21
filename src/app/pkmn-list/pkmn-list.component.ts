@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Pokemon } from '../pokemon';
+
 @Component({
   selector: 'app-pkmn-list',
   templateUrl: './pkmn-list.component.html',
@@ -12,7 +14,7 @@ export class PkmnListComponent implements OnInit {
   ngOnInit() {
   }
 
-  pokemons = [
+  pokemons: Pokemon[] = [
     {
       name: 'Bulbasaur',
       id: 1
